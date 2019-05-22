@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -31,6 +32,7 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    [self.activityIndicator startAnimating];
     [self.tableView insertSubview:self.refreshControl atIndex: 0];
 }
 
@@ -53,6 +55,7 @@
             // TODO: Store the movies in a property to use elsewhere
             // TODO: Reload your table view data
         }
+        [self.activityIndicator stopAnimating];
         [self.refreshControl endRefreshing];
     }];
     [task resume];
