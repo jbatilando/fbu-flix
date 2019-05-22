@@ -43,6 +43,22 @@
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error != nil) {
             NSLog(@"%@", [error localizedDescription]);
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No network found" message:@"Please try again." preferredStyle:(UIAlertControllerStyleAlert)];
+            // Cancel action
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                // Handle cancel action
+            }];
+            [alert addAction:cancelAction];
+            // OK action - refresh table
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                // Handle okay action
+                [self fetchMovies];
+            }];
+            [alert addAction:okAction];
+            // Present UIAlert
+            [self presentViewController:alert animated:YES completion:^{
+                // Optional code for when alert controller has finished presenting
+            }];
         }
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -51,9 +67,6 @@
                 NSLog(@"%@", movie[@"title"]);
             }
             [self.tableView reloadData];
-            // TODO: Get the array of movies
-            // TODO: Store the movies in a property to use elsewhere
-            // TODO: Reload your table view data
         }
         [self.activityIndicator stopAnimating];
         [self.refreshControl endRefreshing];
