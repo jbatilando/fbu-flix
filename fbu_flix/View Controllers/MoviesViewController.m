@@ -95,6 +95,10 @@
     
     cell.posterView.image = nil;
     [cell.posterView setImageWithURL:posterURL];
+    cell.posterView.alpha = 0;
+    [UIImageView animateWithDuration:1.5 animations:^{
+        cell.posterView.alpha = 1;
+    }];
     
     return cell;
 }
