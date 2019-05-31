@@ -56,14 +56,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-d8-Al1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-d8-Al1">
                                                     <rect key="frame" x="157" y="11" width="216" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZJ-f8-V2O">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZJ-f8-V2O">
                                                     <rect key="frame" x="157" y="40" width="216" height="155"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="638"/>
+            <point key="canvasLocation" x="89.855072463768124" y="637.5"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="7L4-gX-BWY">
@@ -164,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="852" y="638"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="0XR-x1-Gze">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VoV-w7-ONM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sRY-Q3-3yH"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list" id="sRY-Q3-3yH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cS1-4a-9xh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -187,7 +187,7 @@
         <scene sceneID="xiF-KK-6hp">
             <objects>
                 <navigationController title="Movies" id="1AO-MO-u9p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5rn-SJ-rrt"/>
+                    <tabBarItem key="tabBarItem" title="Grid" image="spotligt" id="5rn-SJ-rrt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NBs-QT-2Fw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -225,12 +225,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="173" height="282"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nak-ZC-PEl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="173" height="282"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nak-ZC-PEl">
+                                                    <rect key="frame" x="5" y="7.5" width="163" height="267"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="nak-ZC-PEl" secondAttribute="bottom" constant="7.5" id="9aj-Fa-wHs"/>
+                                            <constraint firstItem="nak-ZC-PEl" firstAttribute="leading" secondItem="BsS-CX-3ht" secondAttribute="leading" constant="5" id="HA5-qf-5J3"/>
+                                            <constraint firstItem="nak-ZC-PEl" firstAttribute="top" secondItem="BsS-CX-3ht" secondAttribute="top" constant="7.5" id="nTg-8t-H0b"/>
+                                            <constraint firstAttribute="trailing" secondItem="nak-ZC-PEl" secondAttribute="trailing" constant="5" id="rGP-is-9F9"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="posterView" destination="nak-ZC-PEl" id="fT7-pL-Y9a"/>
                                             <segue destination="ZKo-YW-qn2" kind="show" id="3ue-10-Y0k"/>
@@ -260,10 +265,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVq-A8-Isl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="638"/>
+            <point key="canvasLocation" x="1585.5072463768117" y="637.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list" width="30" height="30"/>
+        <image name="spotligt" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QPI-nV-5pp"/>
+        <segue reference="3ue-10-Y0k"/>
     </inferredMetricsTieBreakers>
 </document>

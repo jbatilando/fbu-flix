@@ -96,6 +96,7 @@
     cell.posterView.image = nil;
     [cell.posterView setImageWithURL:posterURL];
     cell.posterView.alpha = 0;
+    // cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     [UIImageView animateWithDuration:1.5 animations:^{
         cell.posterView.alpha = 1;
     }];
@@ -108,7 +109,7 @@
         NSString *substring = [NSString stringWithString:searchText];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[c] %@",substring];
         self.filteredData =  [self.movies filteredArrayUsingPredicate:predicate];
-        NSLog(@"%@", self.filteredData);
+        // NSLog(@"%@", self.filteredData);
     } else {
         self.filteredData = self.movies;
     }

@@ -61,7 +61,7 @@
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             self.movies = dataDictionary[@"results"];
             for (NSDictionary *movie in self.movies) {
-                NSLog(@"%@", movie[@"title"]);
+                //NSLog(@"%@", movie[@"title"]);
             }
             [self.collectionView reloadData];
         }
@@ -90,6 +90,8 @@
     cell.posterView.image = nil;
     [cell.posterView setImageWithURL:posterURL];
     cell.posterView.alpha = 0;
+    cell.posterView.layer.cornerRadius = 10;
+    cell.posterView.layer.masksToBounds = YES;
     [UIImageView animateWithDuration:1.5 animations:^{
         cell.posterView.alpha = 1;
     }];
@@ -104,7 +106,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Tapped collection cell");
+    // NSLog(@"Tapped collection cell");
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
     NSDictionary *movie = self.movies[indexPath.row];
