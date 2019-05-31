@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *filteredData;
 
 @end
 
@@ -26,6 +28,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.searchBar.delegate = self;
     
     // Do any additional setup after loading the view.
     [self fetchMovies];
@@ -63,8 +66,9 @@
         else {
             NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             self.movies = dataDictionary[@"results"];
+            self.filteredData = self.movies;
             for (NSDictionary *movie in self.movies) {
-                NSLog(@"%@", movie[@"title"]);
+               // NSLog(@"%@", movie[@"title"]);
             }
             [self.tableView reloadData];
         }
@@ -75,12 +79,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.movies.count;
+    return self.filteredData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredData[indexPath.row];
     cell.titleLabel.text = movie[@"title"];
     cell.overviewLabel.text = movie[@"overview"];
     
@@ -93,6 +97,18 @@
     [cell.posterView setImageWithURL:posterURL];
     
     return cell;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length != 0) {
+        NSString *substring = [NSString stringWithString:searchText];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title contains[c] %@",substring];
+        self.filteredData =  [self.movies filteredArrayUsingPredicate:predicate];
+        NSLog(@"%@", self.filteredData);
+    } else {
+        self.filteredData = self.movies;
+    }
+    [self.tableView reloadData];
 }
 
 #pragma mark - Navigation
