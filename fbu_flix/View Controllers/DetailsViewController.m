@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "LargePosterViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
@@ -21,6 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *newTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(myTapMethod)];
+    [self.posterView setUserInteractionEnabled:YES];
+    [self.posterView addGestureRecognizer:newTap];
     
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movie[@"poster_path"];
@@ -41,6 +46,18 @@
     [self.overviewLabel sizeToFit];
 }
 
+//-(void)myTapMethod{
+//    NSLog(@"didTap");
+//    self prepareForSegue:<#(nonnull UIStoryboardSegue *)#> sender:s
+//}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIImageView *tappedImage = sender;
+//    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+//    NSDictionary *movie = self.movies[indexPath.row];
+    LargePosterViewController *largePosterViewController = [segue destinationViewController];
+    largePosterViewController.movie = self.movie;
+}
 /*
 #pragma mark - Navigation
 
