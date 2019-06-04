@@ -38,7 +38,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://s3.amazonaws.com/img0.recordit.co/ItHzG6Ur4h.mp4?AWSAccessKeyId=AKIAINSRFOQXTN4DT46A&Expires=1559688756&Signature=GZbEKsAVBpg3YYUbYoUdccB13QE%3D' title='Flicks Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/ItHzG6Ur4h.gif' title='Flicks Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='http://g.recordit.co/wT60iEMB5W.gif' title='Flicks Walkthrough' width='' alt='Video Walkthrough' />
 
