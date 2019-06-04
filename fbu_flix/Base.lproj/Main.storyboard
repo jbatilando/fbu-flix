@@ -18,6 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="VoV-w7-ONM" kind="relationship" relationship="viewControllers" id="7cS-ot-dCH"/>
@@ -130,14 +131,14 @@
             <objects>
                 <viewController id="ZKo-YW-qn2" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yuh-Fo-iur">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJg-xt-lLn">
                                 <rect key="frame" x="0.0" y="88" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qH-90-LH8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbP-yp-AQ6">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="297"/>
@@ -166,7 +167,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-h4-Ut6">
-                                                <rect key="frame" x="22" y="426" width="384" height="470"/>
+                                                <rect key="frame" x="22" y="426" width="384" height="382"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -227,11 +228,11 @@
             <objects>
                 <viewController id="YFi-ZV-EGj" customClass="LargePosterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4wF-je-57c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-vj-4rW">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -251,16 +252,18 @@
             </objects>
             <point key="canvasLocation" x="850.72463768115949" y="1309.8214285714284"/>
         </scene>
-        <!--Movies-->
+        <!--List-->
         <scene sceneID="0XR-x1-Gze">
             <objects>
-                <navigationController title="Movies" automaticallyAdjustsScrollViewInsets="NO" id="VoV-w7-ONM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="list" id="sRY-Q3-3yH"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VoV-w7-ONM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="list" id="sRY-Q3-3yH">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cS1-4a-9xh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -277,14 +280,17 @@
             </objects>
             <point key="canvasLocation" x="90" y="-123"/>
         </scene>
-        <!--Movies-->
+        <!--Grid-->
         <scene sceneID="xiF-KK-6hp">
             <objects>
-                <navigationController title="Movies" id="1AO-MO-u9p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grid" image="spotligt" id="5rn-SJ-rrt"/>
+                <navigationController id="1AO-MO-u9p" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Grid" image="spotligt" id="5rn-SJ-rrt">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NBs-QT-2Fw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -370,6 +376,6 @@
         <image name="spotligt" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3ue-10-Y0k"/>
+        <segue reference="QPI-nV-5pp"/>
     </inferredMetricsTieBreakers>
 </document>
