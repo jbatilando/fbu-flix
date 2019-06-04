@@ -46,26 +46,19 @@
     [self.overviewLabel sizeToFit];
 }
 
-//-(void)myTapMethod{
-//    NSLog(@"didTap");
-//    self prepareForSegue:<#(nonnull UIStoryboardSegue *)#> sender:s
-//}
+-(void)myTapMethod{
+    NSLog(@"didTap");
+    [self performSegueWithIdentifier:@"LargePosterViewController" sender:nil];
+}
+
+- (IBAction)didTap:(UITapGestureRecognizer *)sender {
+    CGPoint location = [sender locationInView:self.view];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIImageView *tappedImage = sender;
-//    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-//    NSDictionary *movie = self.movies[indexPath.row];
     LargePosterViewController *largePosterViewController = [segue destinationViewController];
     largePosterViewController.movie = self.movie;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

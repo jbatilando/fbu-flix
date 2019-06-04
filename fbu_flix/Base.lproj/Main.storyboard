@@ -31,14 +31,14 @@
         <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MoviesViewController" sceneMemberID="viewController">
+                <viewController title="Movies" id="BYZ-38-t0r" customClass="MoviesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FsU-qj-QPv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" red="0.82745098039999998" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="NM1-51-Soz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -58,14 +58,12 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-d8-Al1">
                                                     <rect key="frame" x="145" y="8" width="36.333333333333343" height="21"/>
-                                                    <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZJ-f8-V2O">
                                                     <rect key="frame" x="145" y="37" width="261" height="20.333333333333329"/>
-                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.47843137250000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -167,7 +165,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-h4-Ut6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-h4-Ut6">
                                                 <rect key="frame" x="22" y="426" width="384" height="470"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -217,6 +215,7 @@
                         <outlet property="overviewLabel" destination="vpu-h4-Ut6" id="HzA-NM-jSc"/>
                         <outlet property="posterView" destination="HKt-03-bcX" id="7Or-3F-U0X"/>
                         <outlet property="titleLabel" destination="pqh-We-fDV" id="WH5-Qh-tzb"/>
+                        <segue destination="YFi-ZV-EGj" kind="show" identifier="LargePosterViewController" id="Qwl-TT-9jb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hA-LL-txf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,12 +230,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-vj-4rW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-vj-4rW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LCR-vj-4rW" firstAttribute="bottom" secondItem="eUK-WP-DjF" secondAttribute="bottom" id="3kf-4l-dtL"/>
+                            <constraint firstItem="LCR-vj-4rW" firstAttribute="leading" secondItem="eUK-WP-DjF" secondAttribute="leading" id="YYN-nu-Hhe"/>
+                            <constraint firstItem="LCR-vj-4rW" firstAttribute="top" secondItem="eUK-WP-DjF" secondAttribute="top" id="hfA-f8-vc5"/>
+                            <constraint firstItem="LCR-vj-4rW" firstAttribute="trailing" secondItem="eUK-WP-DjF" secondAttribute="trailing" id="uWP-ir-Qem"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eUK-WP-DjF"/>
                     </view>
                     <connections>
@@ -247,15 +251,22 @@
             </objects>
             <point key="canvasLocation" x="850.72463768115949" y="1309.8214285714284"/>
         </scene>
-        <!--List-->
+        <!--Movies-->
         <scene sceneID="0XR-x1-Gze">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VoV-w7-ONM" sceneMemberID="viewController">
+                <navigationController title="Movies" automaticallyAdjustsScrollViewInsets="NO" id="VoV-w7-ONM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="list" id="sRY-Q3-3yH"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cS1-4a-9xh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cS1-4a-9xh">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -274,6 +285,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NBs-QT-2Fw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="KHl-0M-b5P" kind="relationship" relationship="rootViewController" id="Ofw-h9-UuN"/>
@@ -283,7 +297,7 @@
             </objects>
             <point key="canvasLocation" x="1586" y="-123"/>
         </scene>
-        <!--Item-->
+        <!--Movies-->
         <scene sceneID="RLM-ZE-R7o">
             <objects>
                 <viewController id="KHl-0M-b5P" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -341,7 +355,7 @@
                         <viewLayoutGuide key="safeArea" id="dnO-AV-dMC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="dWt-nM-ZaN"/>
-                    <navigationItem key="navigationItem" id="8ly-q5-lBp"/>
+                    <navigationItem key="navigationItem" title="Movies" id="8ly-q5-lBp"/>
                     <connections>
                         <outlet property="collectionView" destination="17J-Ij-pA1" id="jWm-Ap-Nxp"/>
                     </connections>

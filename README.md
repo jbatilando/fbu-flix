@@ -19,11 +19,11 @@ The following **optional** features are implemented:
 - [x] Movies are displayed using a CollectionView instead of a TableView.
 - [x] User can search for a movie.
 - [x] All images fade in as they are loading.
-- [ ] User can view the large movie poster by tapping on a cell.
+- [x] User can view the large movie poster by tapping on a cell.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
 - [ ] Customize the selection effect of the cell.
-- [ ] Customize the navigation bar.
-- [ ] Customize the UI.
+- [x] Customize the navigation bar.
+- [x] Customize the UI.
 
 The following **additional** features are implemented:
 
@@ -38,7 +38,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://s3.amazonaws.com/img0.recordit.co/ItHzG6Ur4h.mp4?AWSAccessKeyId=AKIAINSRFOQXTN4DT46A&Expires=1559688756&Signature=GZbEKsAVBpg3YYUbYoUdccB13QE%3D' title='Flicks Walkthrough' width='' alt='Video Walkthrough' />
+
+<img src='http://g.recordit.co/wT60iEMB5W.gif' title='Flicks Walkthrough' width='' alt='Video Walkthrough' />
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
