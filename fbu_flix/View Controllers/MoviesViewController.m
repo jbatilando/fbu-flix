@@ -40,6 +40,13 @@
     [self.tableView insertSubview:self.refreshControl atIndex: 0];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    if (indexPath) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
+    }
+}
+
 - (void)fetchMovies {
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
