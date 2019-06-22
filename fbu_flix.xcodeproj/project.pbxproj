@@ -148,7 +148,6 @@
 			children = (
 				62448D43229497A10071212E /* Views */,
 				62448D422294979B0071212E /* View Controllers */,
-				62448D41229497960071212E /* Models */,
 				62448D0C229491BA0071212E /* AppDelegate.h */,
 				62448D0D229491BA0071212E /* AppDelegate.m */,
 				62448D12229491BA0071212E /* Main.storyboard */,
@@ -176,13 +175,6 @@
 				62448D32229491BC0071212E /* Info.plist */,
 			);
 			path = fbu_flixUITests;
-			sourceTree = "<group>";
-		};
-		62448D41229497960071212E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		62448D422294979B0071212E /* View Controllers */ = {
