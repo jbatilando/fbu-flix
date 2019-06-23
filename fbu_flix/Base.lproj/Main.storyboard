@@ -58,14 +58,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-d8-Al1">
-                                                    <rect key="frame" x="145" y="8" width="36.333333333333343" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="145" y="8" width="35" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZJ-f8-V2O">
-                                                    <rect key="frame" x="145" y="37" width="261" height="20.333333333333329"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                                    <rect key="frame" x="145" y="37" width="261" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -131,14 +131,14 @@
             <objects>
                 <viewController id="ZKo-YW-qn2" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yuh-Fo-iur">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJg-xt-lLn">
                                 <rect key="frame" x="0.0" y="88" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qH-90-LH8">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbP-yp-AQ6">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="297"/>
@@ -156,19 +156,19 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqh-We-fDV">
                                                 <rect key="frame" x="148" y="305" width="258" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAA-uY-uOx">
-                                                <rect key="frame" x="148" y="330" width="89.333333333333314" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="148" y="330" width="89.333333333333314" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpu-h4-Ut6">
-                                                <rect key="frame" x="22" y="426" width="384" height="470"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="22" y="426" width="384" height="382"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -186,7 +186,7 @@
                                             <constraint firstItem="HKt-03-bcX" firstAttribute="leading" secondItem="6qH-90-LH8" secondAttribute="leading" constant="20" id="Yii-2A-zhT"/>
                                             <constraint firstAttribute="trailing" secondItem="vpu-h4-Ut6" secondAttribute="trailing" constant="8" id="Yxu-l5-CrK"/>
                                             <constraint firstItem="ZbP-yp-AQ6" firstAttribute="leading" secondItem="6qH-90-LH8" secondAttribute="leading" id="f95-c2-xiS"/>
-                                            <constraint firstAttribute="trailing" secondItem="NAA-uY-uOx" secondAttribute="trailing" constant="176.66999999999999" id="hrT-qw-kXx"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="NAA-uY-uOx" secondAttribute="trailing" constant="176.66999999999999" id="hrT-qw-kXx"/>
                                             <constraint firstItem="ZbP-yp-AQ6" firstAttribute="centerY" secondItem="HKt-03-bcX" secondAttribute="centerY" constant="-150" id="hww-nS-j0B"/>
                                             <constraint firstAttribute="trailing" secondItem="pqh-We-fDV" secondAttribute="trailing" constant="8" id="jxl-Q2-mzk"/>
                                             <constraint firstItem="vpu-h4-Ut6" firstAttribute="top" secondItem="HKt-03-bcX" secondAttribute="bottom" constant="17" id="nR6-nT-wcv"/>
@@ -228,11 +228,11 @@
             <objects>
                 <viewController id="YFi-ZV-EGj" customClass="LargePosterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4wF-je-57c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCR-vj-4rW">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -376,6 +376,6 @@
         <image name="spotligt" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3ue-10-Y0k"/>
+        <segue reference="QPI-nV-5pp"/>
     </inferredMetricsTieBreakers>
 </document>
