@@ -19,12 +19,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Set large poster
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = self.movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [self.largePosterView setImageWithURL:posterURL];
+    
+    // Set low res poster
+    NSString *smallPosterURLString = @"https://image.tmdb.org/t/p/w45/";
+    NSString *smallPosterString = [smallPosterURLString stringByAppendingString:posterURLString];
+    NSURL *smallPosterURL = [NSURL URLWithString:smallPosterString];
+    [self.largePosterView setImageWithURL:smallPosterURL];
+    
+    // Set large res poster
+    NSString *bigPosterURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *bigPosterString = [bigPosterURLString stringByAppendingString:posterURLString];
+    NSURL *bigPosterURL = [NSURL URLWithString:bigPosterString];
+    
+    // Request
+    NSURLRequest *request = [NSURLRequest requestWithURL:bigPosterURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    [self.largePosterView setImageWithURLRequest:request placeholderImage:nil success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+        NSLog(@"Set large poster");
+        [self.largePosterView setImageWithURL:bigPosterURL];
+    } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+        // Show alert if no connection found
+        NSLog(@"%@", [error localizedDescription]);
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Something went wrong." message:@"Please try again." preferredStyle:(UIAlertControllerStyleAlert)];
+        // Ok action - fetch movies
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 /*

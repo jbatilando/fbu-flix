@@ -21,7 +21,6 @@
 @property (strong, nonatomic) NSArray *filteredData;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-
 @end
 
 @implementation MoviesViewController
