@@ -11,7 +11,7 @@
 #import "LargePosterViewController.h"
 
 @interface DetailsViewController ()
-// MARK: Outlets
+#pragma mark Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -51,12 +51,12 @@
     [self.overviewLabel sizeToFit];
 }
 
-// MARK: Methods
+#pragma mark Methods
 -(void)myTapMethod{
     [self performSegueWithIdentifier:@"LargePosterViewController" sender:nil];
 }
 
-// MARK: IBActions
+#pragma mark IBActions
 - (IBAction)didTap:(UITapGestureRecognizer *)sender {
     CGPoint location = [sender locationInView:self.view];
 }

@@ -24,19 +24,19 @@
     // Set collectionView delegate and dataSource
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    
+
     // Fetch movies from Movie DB
     [self fetchMovies];
     
     // Calculate layout for collectionView
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    CGFloat postersPerLine = 2.25;
+    CGFloat postersPerLine = 3;
     CGFloat itemWidth = self.collectionView.frame.size.width / postersPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
-// MARK: Methods
+#pragma mark Methods
 - (void)fetchMovies {
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -65,7 +65,7 @@
     [task resume];
 }
 
-// MARK: Collection View
+#pragma mark Collection View
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
     NSDictionary *movie = self.movies[indexPath.item];
@@ -96,7 +96,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // NSLog(@"Tapped collection cell");
+    NSLog(@"Tapped collection cell");
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
     NSDictionary *movie = self.movies[indexPath.row];

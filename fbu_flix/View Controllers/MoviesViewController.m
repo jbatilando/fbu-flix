@@ -31,6 +31,7 @@
     // Set tableView and searchBar data source and/or delegate
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.searchBar.delegate = self;
     
     // Get movies
@@ -50,7 +51,7 @@
     }
 }
 
-// MARK: Methods
+#pragma mark Methods
 - (void)fetchMovies {
     // URL To get movies, create a request and session, get movies
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
@@ -86,7 +87,7 @@
     [task resume];
 }
 
-// MARK: Table view
+#pragma mark Table view
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredData.count;
 }
@@ -117,7 +118,7 @@
     return cell;
 }
 
-// MARK: Search bar
+#pragma mark Search bar
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length != 0) {
         NSString *substring = [NSString stringWithString:searchText];
@@ -134,7 +135,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredData[indexPath.row];
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
 }

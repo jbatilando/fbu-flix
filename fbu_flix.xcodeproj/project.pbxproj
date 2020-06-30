@@ -23,6 +23,7 @@
 		62448D31229491BC0071212E /* fbu_flixUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62448D30229491BC0071212E /* fbu_flixUITests.m */; };
 		62448D402294970C0071212E /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62448D3F2294970C0071212E /* MoviesViewController.m */; };
 		62448D462294A2210071212E /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62448D452294A2210071212E /* MovieCell.m */; };
+		62C612F624A5452900E7ECDF /* SearchCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C612F524A5452900E7ECDF /* SearchCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		62448D3F2294970C0071212E /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		62448D442294A2210071212E /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 		62448D452294A2210071212E /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		62C612F424A5452900E7ECDF /* SearchCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCollectionReusableView.h; sourceTree = "<group>"; };
+		62C612F524A5452900E7ECDF /* SearchCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCollectionReusableView.m; sourceTree = "<group>"; };
 		7E1FC7F1A003F42665CDF198 /* libPods-fbu_flixTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fbu_flixTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5C94FD2C0CBF9AA96E1195 /* Pods-fbu_flixUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu_flixUITests.release.xcconfig"; path = "Target Support Files/Pods-fbu_flixUITests/Pods-fbu_flixUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DE650C31AA14D15C4E9E9B86 /* Pods-fbu_flixTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbu_flixTests.debug.xcconfig"; path = "Target Support Files/Pods-fbu_flixTests/Pods-fbu_flixTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				6214C65922A0D01900D63216 /* MovieCollectionCell.m */,
 				62448D442294A2210071212E /* MovieCell.h */,
 				62448D452294A2210071212E /* MovieCell.m */,
+				62C612F424A5452900E7ECDF /* SearchCollectionReusableView.h */,
+				62C612F524A5452900E7ECDF /* SearchCollectionReusableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				6214C65A22A0D01900D63216 /* MovieCollectionCell.m in Sources */,
 				62448D462294A2210071212E /* MovieCell.m in Sources */,
 				6224D7C822A1D17300628EFE /* LargePosterViewController.m in Sources */,
+				62C612F624A5452900E7ECDF /* SearchCollectionReusableView.m in Sources */,
 				62448D402294970C0071212E /* MoviesViewController.m in Sources */,
 				6214C65722A0D01000D63216 /* MoviesGridViewController.m in Sources */,
 			);
