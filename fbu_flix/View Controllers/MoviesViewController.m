@@ -10,6 +10,8 @@
 #import "MovieCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
+#import "Movie.h"
+#import "MovieAPIManager.h"
 
 @interface MoviesViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 // MARK: IBOutlets
@@ -19,7 +21,7 @@
 
 // MARK: Properties
 @property (strong, nonatomic) NSArray *filteredData;
-@property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) NSMutableArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
@@ -40,7 +42,6 @@
     // Create UIRefreshControl and attatch it to fetchMovies function
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
-    [self.activityIndicator startAnimating];
     [self.tableView insertSubview:self.refreshControl atIndex: 0];
 }
 
@@ -53,38 +54,15 @@
 
 #pragma mark Methods
 - (void)fetchMovies {
+    [self.activityIndicator startAnimating];
     // URL To get movies, create a request and session, get movies
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (error != nil) {
-            // Show alert if no connection found
-            NSLog(@"%@", [error localizedDescription]);
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No network found" message:@"Please try again." preferredStyle:(UIAlertControllerStyleAlert)];
-            // Cancel action - don't fetch movies
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            }];
-            [alert addAction:cancelAction];
-            // Ok action - fetch movies
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [self fetchMovies];
-            }];
-            [alert addAction:okAction];
-            [self presentViewController:alert animated:YES completion:nil];
-        } else {
-            // Create a NSDictionary with movies
-            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            self.movies = dataDictionary[@"results"];
-            self.filteredData = self.movies;
-            [self.tableView reloadData];
-        }
-        // Stop UIRefreshControl animation when fetch is complete
+    MovieAPIManager *manager = [MovieAPIManager new];
+    [manager fetchNowPlaying:^(NSArray *movies, NSError *error) {
+        self.movies = (NSMutableArray *)movies;
+        self.filteredData = self.movies;
+        [self.tableView reloadData];
         [self.activityIndicator stopAnimating];
-        [self.refreshControl endRefreshing];
     }];
-    // Resumes task if suspended
-    [task resume];
 }
 
 #pragma mark Table view
@@ -94,27 +72,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
-    // Get respective movie
-    NSDictionary *movie = self.filteredData[indexPath.row];
-    
-    // Get movie poster URL
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    
-    // Set Movie Cell (should have a setter function in class)
-    cell.titleLabel.text = movie[@"title"];
-    cell.overviewLabel.text = movie[@"overview"];
-    cell.posterView.image = nil;
-    [cell.posterView setImageWithURL:posterURL];
-    cell.posterView.alpha = 0;
-    
-    // Fade movie poster image in as it loads
-    [UIImageView animateWithDuration:1.5 animations:^{
-        cell.posterView.alpha = 1;
-    }];
-    
+    cell.movie = self.filteredData[indexPath.row];
     return cell;
 }
 
@@ -135,7 +93,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UITableViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.filteredData[indexPath.row];
+    Movie *movie = self.filteredData[indexPath.row];
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
 }

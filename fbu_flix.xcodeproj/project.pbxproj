@@ -14,6 +14,8 @@
 		6214C65A22A0D01900D63216 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6214C65922A0D01900D63216 /* MovieCollectionCell.m */; };
 		6224D7C822A1D17300628EFE /* LargePosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6224D7C722A1D17300628EFE /* LargePosterViewController.m */; };
 		6231C9272295E9C200CD6350 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6231C9262295E9C200CD6350 /* DetailsViewController.m */; };
+		6236BCE724AC10DA009DD4E6 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 6236BCE624AC10DA009DD4E6 /* Movie.m */; };
+		6236BCF124AC5E18009DD4E6 /* MovieAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6236BCF024AC5E18009DD4E6 /* MovieAPIManager.m */; };
 		62448D0E229491BA0071212E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 62448D0D229491BA0071212E /* AppDelegate.m */; };
 		62448D14229491BA0071212E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62448D12229491BA0071212E /* Main.storyboard */; };
 		62448D16229491BC0071212E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62448D15229491BC0071212E /* Assets.xcassets */; };
@@ -57,6 +59,10 @@
 		6224D7C722A1D17300628EFE /* LargePosterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LargePosterViewController.m; sourceTree = "<group>"; };
 		6231C9252295E9C200CD6350 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		6231C9262295E9C200CD6350 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		6236BCE524AC10DA009DD4E6 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		6236BCE624AC10DA009DD4E6 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		6236BCEF24AC5E18009DD4E6 /* MovieAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieAPIManager.h; sourceTree = "<group>"; };
+		6236BCF024AC5E18009DD4E6 /* MovieAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieAPIManager.m; sourceTree = "<group>"; };
 		62448D09229491BA0071212E /* fbu_flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbu_flix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62448D0C229491BA0071212E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		62448D0D229491BA0071212E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +130,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6236BCE424AC10A0009DD4E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6236BCE524AC10DA009DD4E6 /* Movie.h */,
+				6236BCE624AC10DA009DD4E6 /* Movie.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6236BCE824AC58CF009DD4E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6236BCEF24AC5E18009DD4E6 /* MovieAPIManager.h */,
+				6236BCF024AC5E18009DD4E6 /* MovieAPIManager.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		62448D00229491BA0071212E = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +173,8 @@
 		62448D0B229491BA0071212E /* fbu_flix */ = {
 			isa = PBXGroup;
 			children = (
+				6236BCE824AC58CF009DD4E6 /* Networking */,
+				6236BCE424AC10A0009DD4E6 /* Models */,
 				62448D43229497A10071212E /* Views */,
 				62448D422294979B0071212E /* View Controllers */,
 				62448D0C229491BA0071212E /* AppDelegate.h */,
@@ -422,8 +448,10 @@
 			files = (
 				62448D1C229491BC0071212E /* main.m in Sources */,
 				6231C9272295E9C200CD6350 /* DetailsViewController.m in Sources */,
+				6236BCE724AC10DA009DD4E6 /* Movie.m in Sources */,
 				62448D0E229491BA0071212E /* AppDelegate.m in Sources */,
 				6214C65A22A0D01900D63216 /* MovieCollectionCell.m in Sources */,
+				6236BCF124AC5E18009DD4E6 /* MovieAPIManager.m in Sources */,
 				62448D462294A2210071212E /* MovieCell.m in Sources */,
 				6224D7C822A1D17300628EFE /* LargePosterViewController.m in Sources */,
 				62C612F624A5452900E7ECDF /* SearchCollectionReusableView.m in Sources */,
