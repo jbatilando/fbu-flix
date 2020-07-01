@@ -57,7 +57,7 @@
     [self.activityIndicator startAnimating];
     // URL To get movies, create a request and session, get movies
     MovieAPIManager *manager = [MovieAPIManager new];
-    [manager fetchNowPlaying:^(NSArray *movies, NSError *error) {
+    [manager fetchPopularMovies:^(NSArray *movies, NSError *error) {
         self.movies = (NSMutableArray *)movies;
         self.filteredData = self.movies;
         [self.tableView reloadData];

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MovieAPIManager : AFURLSessionManager
 @property (nonatomic, strong) NSURLSession *session;
 - (void)fetchNowPlaying:(void(^)(NSArray *movies, NSError *error))completion;
+- (void)fetchPopularMovies:(void(^)(NSArray *movies, NSError *error))completion;
 @end
 
 NS_ASSUME_NONNULL_END
